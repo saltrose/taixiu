@@ -3,7 +3,6 @@ import "./style.scss";
 import BanChoi from "./BanChoi";
 import KetQua from "./KetQua";
 import BtnPlay from "./BtnPlay";
-
 const getIntRandom = () => {
   return Math.floor(Math.random() * 6); // tạo các con số ngẫu nhiên từ 0 -5;
 };

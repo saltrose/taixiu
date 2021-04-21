@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import XucXac from "./XucXac";
+import BtnTaiXiu from "./BtnTaiXiu";
+
 export default class BanChoi extends Component {
   renderDanhSachXucXac = () => {
     const { xucXacs } = this.props;
@@ -7,21 +9,13 @@ export default class BanChoi extends Component {
       return <XucXac item={item} />;
     });
   };
-  handleChoiceTaiOrXiu = (taiOrXiu) => {
-    // console.log(taiOrXiu);
-    const { handleTaiorXiu } = this.props;
-    handleTaiorXiu(taiOrXiu);
-  };
+
   render() {
+    const { handleTaiorXiu } = this.props;
     return (
       <div className="row text-center">
         <div className="col-4">
-          <button
-            onClick={() => this.handleChoiceTaiOrXiu(true)}
-            className="bg-danger display-4 p-5 text-light"
-          >
-            TÀI{" "}
-          </button>
+          <BtnTaiXiu handleTaiorXiu={handleTaiorXiu} taiOrXiu={true} />
         </div>
         <div className="col-4">
           <div className="d-flex justify-content-center">
@@ -29,12 +23,7 @@ export default class BanChoi extends Component {
           </div>
         </div>
         <div className="col-4">
-          <button
-            onClick={() => this.handleChoiceTaiOrXiu(false)}
-            className="bg-dark display-4 p-5 text-light"
-          >
-            XỈU{" "}
-          </button>
+          <BtnTaiXiu handleTaiorXiu={handleTaiorXiu} taiOrXiu={false} />
         </div>
       </div>
     );

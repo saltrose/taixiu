@@ -9,11 +9,25 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/jquery/dist/jquery.slim";
 import "../node_modules/popper.js/dist/popper";
 import "../node_modules/bootstrap/dist/js/bootstrap";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+const rootReducer = () => {
+  return {
+    name: "Ronando",
+    skill: "hello",
+  };
+};
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <React.StrictModeReact>
+    {/* <Provider store={store}> */}
+    {/* <App /> */}
+    {/* </Provider> */}
+  </React.StrictModeReact>,
   document.getElementById("root")
 );
 
