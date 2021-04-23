@@ -23,11 +23,11 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <React.StrictModeReact>
-    {/* <Provider store={store}> */}
-    {/* <App /> */}
-    {/* </Provider> */}
-  </React.StrictModeReact>,
+  <React.Fragment>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.Fragment>,
   document.getElementById("root")
 );
 
